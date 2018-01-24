@@ -25,10 +25,26 @@
 		<meta charset="utf-8">
 		<title></title>
 	</head>
-	<body>
+	<body onload="run()">
 
 <div id="second"></div>
 <div id="total"></div>
 <div id="accepted"></div>
 	</body>
+
+
+	<script>
+	function eventFire(el, etype){
+  if (el.fireEvent) {
+    el.fireEvent('on' + etype);
+  } else {
+    var evObj = document.createEvent('Events');
+    evObj.initEvent(etype, true, false);
+    el.dispatchEvent(evObj);
+  }
+}
+	function run(){
+		eventFire(document.getElementById('accept'), 'click');
+	}
+	</script>
 </html>
