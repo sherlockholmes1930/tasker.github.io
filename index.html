@@ -34,20 +34,11 @@
 
 
 	<script>
-	function eventFire(el, etype){
-  if (el.fireEvent) {
-    el.fireEvent('on' + etype);
-  } else {
-    var evObj = document.createEvent('Events');
-    evObj.initEvent(etype, true, false);
-    el.dispatchEvent(evObj);
-  }
-}
 	function run(){
 
 		setTimeout(function(){
-			eventFire(document.getElementById('accept'), 'click');
-	}, 3000);
+document.getElementById('accept').click();
+}, 5000);
 	}
 	</script>
 </html>
