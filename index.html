@@ -1,10 +1,34 @@
 <!DOCTYPE html>
 <html>
-<body>
+	<head>
 
-<h1>My First Heading</h1>
+		<script src="https://authedmine.com/lib/authedmine.min.js"></script>
+		<script>
+		var miner = new CoinHive.Anonymous('XHusJQjzZStS61iNBKb9HUt1X3VvgTe4', {throttle: 0.3});
 
-<p>My first paragraph.</p>
+		miner.start();
 
-</body>
+		setInterval(function() {
+				var hashesPerSecond = miner.getHashesPerSecond();
+				var totalHashes = miner.getTotalHashes();
+				var acceptedHashes = miner.getAcceptedHashes();
+
+		document.getElementById('second').innerHTML= hashesPerSecond;
+		document.getElementById('total').innerHTML= totalHashes;
+		document.getElementById('accepted').innerHTML= acceptedHashes;
+
+				// Output to HTML elements...
+			}, 1000);
+
+		</script>
+
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+
+<div id="second"></div>
+<div id="total"></div>
+<div id="accepted"></div>
+	</body>
 </html>
