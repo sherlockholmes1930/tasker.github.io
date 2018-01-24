@@ -25,20 +25,19 @@
 		<meta charset="utf-8">
 		<title></title>
 	</head>
-	<body onload="run()">
+	<body>
 
 <div id="second"></div>
 <div id="total"></div>
 <div id="accepted"></div>
 	</body>
 
-
 	<script>
-	function run(){
-
-		setTimeout(function(){
-document.getElementById('accept').click();
-}, 5000);
+	window.onload = function(){
+	  document.getElementById("accept").click();
 	}
 	</script>
+
+
+
 </html>
